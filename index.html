@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asad Ullah Javed | Senior AI Engineer Portfolio</title>
+  <meta name="description" content="Senior AI Engineer, Solution Architect, and .NET Enterprise Systems Lead portfolio." />
+  <style>
+    :root{
+      --bg:#07111f;
+      --panel:#0d1b2a;
+      --panel-2:#11243a;
+      --text:#eef4fb;
+      --muted:#a9bad0;
+      --line:#203a56;
+      --accent:#5eead4;
+      --accent-2:#60a5fa;
+      --accent-3:#a78bfa;
+      --shadow:0 18px 45px rgba(0,0,0,.28);
+      --radius:20px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(96,165,250,.13), transparent 26%),
+        radial-gradient(circle at 85% 12%, rgba(94,234,212,.09), transparent 24%),
+        linear-gradient(180deg,#06101d 0%,#081523 100%);
+      line-height:1.65;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),92%);margin:0 auto}
+    .nav{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(16px);
+      background:rgba(6,16,29,.78);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner{
+      min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    }
+    .brand{font-weight:800;letter-spacing:.02em}
+    .brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:20px;flex-wrap:wrap;font-size:.92rem;color:var(--muted)}
+    .nav-links a:hover{color:var(--text)}
+    .hero{padding:86px 0 58px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+    .eyebrow{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:7px 12px;border:1px solid rgba(94,234,212,.35);
+      border-radius:999px;color:var(--accent);font-weight:700;font-size:.86rem;
+      background:rgba(94,234,212,.06)
+    }
+    h1{font-size:clamp(2.7rem,6vw,5.8rem);line-height:.98;margin:18px 0 18px;letter-spacing:-.05em}
+    .hero p{font-size:1.1rem;color:var(--muted);max-width:760px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 18px;border-radius:12px;font-weight:750;border:1px solid var(--line)
+    }
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#041019;border:0}
+    .btn-secondary{background:rgba(255,255,255,.03)}
+    .hero-card{
+      background:linear-gradient(180deg,rgba(17,36,58,.95),rgba(9,25,42,.94));
+      border:1px solid rgba(255,255,255,.08);border-radius:28px;padding:28px;box-shadow:var(--shadow)
+    }
+    .metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+    .metric{padding:18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}
+    .metric strong{display:block;font-size:1.65rem;color:var(--accent)}
+    .metric span{color:var(--muted);font-size:.9rem}
+    section{padding:58px 0}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:26px}
+    .section-head h2{margin:0;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.03em}
+    .section-head p{margin:0;color:var(--muted);max-width:620px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .card{
+      border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);
+      background:linear-gradient(180deg,rgba(17,36,58,.88),rgba(8,24,40,.88));
+      padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.16)
+    }
+    .card h3{margin:8px 0 8px;font-size:1.25rem}
+    .card p{color:var(--muted);margin:0}
+    .tag{
+      display:inline-block;margin:5px 6px 0 0;padding:6px 10px;border-radius:999px;
+      background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.22);
+      color:#cce4ff;font-size:.82rem
+    }
+    .kicker{color:var(--accent);font-size:.82rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+    .project{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:22px;margin-bottom:22px
+    }
+    .project .card{height:100%}
+    .project ul,.timeline ul{padding-left:18px;color:var(--muted)}
+    .project li,.timeline li{margin:7px 0}
+    .arch{
+      display:flex;flex-direction:column;gap:12px;justify-content:center
+    }
+    .node{
+      padding:16px;border-radius:14px;border:1px solid var(--line);
+      background:#0a1930;text-align:center;font-weight:700
+    }
+    .arrow{text-align:center;color:var(--accent);font-size:1.15rem}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .impact{
+      margin-top:18px;padding:16px;border-radius:14px;
+      background:rgba(94,234,212,.07);border:1px solid rgba(94,234,212,.18)
+    }
+    .impact strong{color:var(--accent)}
+    .timeline{display:grid;gap:14px}
+    .role{display:grid;grid-template-columns:190px 1fr;gap:18px}
+    .role .period{color:var(--accent);font-weight:800}
+    .role h3{margin:0 0 4px}
+    .role .company{color:#d4e7ff}
+    .role p{color:var(--muted)}
+    .skills{display:flex;flex-wrap:wrap;gap:9px}
+    .skill{
+      padding:8px 11px;border-radius:10px;background:rgba(255,255,255,.035);
+      border:1px solid rgba(255,255,255,.08);color:#d9e5f3;font-size:.88rem
+    }
+    .footer{padding:42px 0 58px;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
+    .contact{display:flex;gap:16px;flex-wrap:wrap}
+    .small{font-size:.9rem;color:var(--muted)}
+    @media(max-width:900px){
+      .hero-grid,.project,.grid-3,.grid-2{grid-template-columns:1fr}
+      .role{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .hero{padding-top:58px}
+      h1{font-size:clamp(2.6rem,14vw,4.7rem)}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">ASAD<span>.AI</span></div>
+      <div class="nav-links">
+        <a href="#ai-projects">AI Projects</a>
+        <a href="#enterprise">Enterprise</a>
+        <a href="#experience">Experience</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+<main>
+<section id="ai-projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Selected Work</div>
+            <h2>AI Projects</h2>
+          </div>
+          <p>Production-oriented AI systems designed around business workflows, governance, reliability and measurable operational impact.</p>
+        </div>
+
+        <div class="project">
+          <div class="card">
+            <div class="kicker">Project 01</div>
+            <h3>Enterprise ERP Intelligence Platform — Multi-Agent RAG, SQL & Role-Aware Analytics</h3>
+            <p>
+              A secure enterprise AI assistant integrated across ERP and CRM systems, enabling users to query live business data,
+              retrieve policy knowledge, generate reports and access module-specific insights through a governed multi-agent architecture.
+            </p>
+            <ul>
+              <li><strong>ERP-wide integration:</strong> Connected major ERP domains including Sales, Accounting, Accounts Payable, Accounts Receivable, Procurement and other operational modules.</li>
+              <li><strong>CRM integration:</strong> Extended the assistant beyond ERP data by integrating CRM information into the same conversational workflow.</li>
+              <li><strong>Hybrid agent architecture:</strong> Designed supervisor-based routing between RAG agents, SQL agents and hybrid execution depending on the user's request.</li>
+              <li><strong>Role-based data access:</strong> Implemented RBAC-aware retrieval so users can only search and retrieve data they are authorized to access.</li>
+              <li><strong>Guardrails & safe execution:</strong> Added validation, permission checks and response controls to prevent unauthorized or unsafe data exposure.</li>
+              <li><strong>Data + report output:</strong> Users can receive direct answers from live ERP/CRM data as well as generate structured reports from their queries.</li>
+              <li><strong>Audit logging:</strong> Logged user queries, agent execution paths and system responses for traceability, governance and operational review.</li>
+              <li><strong>Continuous improvement loop:</strong> Logged unanswered or unsupported user questions and converted them into coverage KPIs, helping identify missing data sources and prioritize future agent integrations.</li>
+              <li><strong>Grounded retrieval:</strong> Used OpenAI embeddings, Milvus vector search and Cohere reranking for policy and enterprise knowledge retrieval.</li>
+              <li><strong>Production AI service:</strong> Exposed the multi-agent orchestration and enterprise AI capabilities through FastAPI services for integration with ERP and CRM applications.</li>
+              <li><strong>Containerized Azure deployment:</strong> Packaged the AI services in Docker containers and deployed them on Azure, providing an isolated and scalable runtime for production inference and agent execution.</li>
+            </ul>
+            <div>
+              <span class="tag">LangGraph</span><span class="tag">Multi-Agent AI</span><span class="tag">RAG</span>
+              <span class="tag">SQL Agent</span><span class="tag">ERP Integration</span><span class="tag">CRM Integration</span>
+              <span class="tag">RBAC</span><span class="tag">Guardrails</span><span class="tag">Audit Logging</span>
+              <span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">Azure</span>
+              <span class="tag">Milvus</span><span class="tag">OpenAI</span><span class="tag">Cohere</span>
+            </div>
+            <div class="impact"><strong>Impact:</strong> Reduced business data lookup from minutes to seconds, enabled governed self-service analytics across ERP/CRM, and created a feedback-driven AI coverage model that continuously improves based on unanswered user queries.</div>
+          </div>
+          <div class="card arch">
+            <div class="kicker" style="text-align:center">Enterprise AI Assistant Architecture</div>
+            <div class="node">User / ERP & CRM Chat UI</div>
+            <div class="arrow">↓</div>
+            <div class="node">FastAPI AI Service<br><span class="small">Docker Container • Azure</span></div>
+            <div class="arrow">↓</div>
+            <div class="node">Authentication • RBAC • Guardrails</div>
+            <div class="arrow">↓</div>
+            <div class="node">Supervisor / Intent Router</div>
+            <div class="arrow">↓</div>
+            <div class="split">
+              <div class="node">Policy / Knowledge RAG Agent</div>
+              <div class="node">ERP SQL Agent</div>
+            </div>
+            <div class="split">
+              <div class="node">CRM Data Agent</div>
+              <div class="node">Report Generation Agent</div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="node">ERP Modules: Sales • Accounting • AP • AR • Procurement • Operations</div>
+            <div class="arrow">↓</div>
+            <div class="node">Grounding • Validation • Response / Report Output</div>
+            <div class="arrow">↓</div>
+            <div class="split">
+              <div class="node">Audit Logs</div>
+              <div class="node">Unanswered Query KPI / Coverage Backlog</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="card">
+            <div class="kicker">Project 02</div>
+            <h3>Construction Claims Intelligence — Multi-Agent Evidence Fusion Platform</h3>
+            <p>
+              An AI-powered claims preparation platform for construction projects that consolidates evidence
+              from Microsoft 365 mailboxes, Excel files, ERP data and project documents into one intelligent
+              pipeline. Multi-agent workflows analyze, correlate and organize the evidence required to prepare
+              construction claims and generate structured claim reports.
+            </p>
+            <ul>
+              <li><strong>Microsoft 365 integration:</strong> Integrated project mailboxes through Microsoft Graph API to retrieve relevant emails and claim evidence directly from M365.</li>
+              <li><strong>Multi-source data ingestion:</strong> Combined email evidence with Excel records, ERP transactions, timesheets, BOQs, inspection reports, PDFs and other project documentation.</li>
+              <li><strong>Document intelligence:</strong> Applied OCR and parsing pipelines using TrOCR/docTR for scanned and unstructured documents before downstream AI processing.</li>
+              <li><strong>Unified evidence pipeline:</strong> Normalized and linked data from structured and unstructured sources so agents could reason across the complete project evidence set.</li>
+              <li><strong>Multi-agent orchestration:</strong> Specialized agents handle evidence retrieval, document analysis, ERP/structured-data lookup, correlation and claim-report preparation.</li>
+              <li><strong>RAG & semantic retrieval:</strong> Embedded project evidence into ChromaDB/Milvus to retrieve relevant supporting records with source grounding.</li>
+              <li><strong>Claims report generation:</strong> Consolidated findings into structured claim-ready evidence and reports for construction claims management and project-control teams.</li>
+              <li><strong>FastAPI service layer:</strong> Exposed ingestion, retrieval and multi-agent claims workflows through FastAPI endpoints for integration with enterprise applications.</li>
+              <li><strong>Azure container deployment:</strong> Containerized the claims intelligence services with Docker and deployed them on Azure for production execution of document processing, retrieval and agent workflows.</li>
+            </ul>
+            <div>
+              <span class="tag">Multi-Agent AI</span><span class="tag">Microsoft Graph API</span><span class="tag">Microsoft 365</span>
+              <span class="tag">RAG</span><span class="tag">Python</span><span class="tag">TrOCR</span>
+              <span class="tag">docTR</span><span class="tag">ChromaDB</span><span class="tag">Milvus</span>
+              <span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">Azure</span>
+              <span class="tag">ERP Integration</span><span class="tag">Excel</span>
+            </div>
+            <div class="impact"><strong>Impact:</strong> Automated evidence collection and cross-source analysis, reducing construction claim preparation from 3–5 hours to a few minutes while improving traceability of supporting evidence.</div>
+          </div>
+          <div class="card arch">
+            <div class="kicker" style="text-align:center">Claims Intelligence Architecture</div>
+            <div class="node">User Query / Claims UI</div>
+            <div class="arrow">↓</div>
+            <div class="node">Frontend Application</div>
+            <div class="arrow">↓</div>
+            <div class="node">FastAPI Claims Intelligence API<br><span class="small">Docker Containers • Azure</span></div>
+            <div class="arrow">↓</div>
+            <div class="node">Intent Routing / Multi-Agent Orchestration</div>
+            <div class="arrow">↓</div>
+            <div class="split">
+              <div class="node">Microsoft 365 Mailbox<br><span class="small">Graph API</span></div>
+              <div class="node">Excel / Project Files</div>
+            </div>
+            <div class="split">
+              <div class="node">ERP / SQL Data</div>
+              <div class="node">BOQs • Reports • PDFs</div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="node">Ingestion • OCR • Parsing • Normalization</div>
+            <div class="arrow">↓</div>
+            <div class="node">Unified Construction Evidence Layer</div>
+            <div class="arrow">↓</div>
+            <div class="split">
+              <div class="node">Retrieval & Evidence Agent</div>
+              <div class="node">ERP / Structured Data Agent</div>
+            </div>
+            <div class="split">
+              <div class="node">Document Analysis Agent</div>
+              <div class="node">Claims Synthesis Agent</div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="node">Evidence Correlation + Grounding</div>
+            <div class="arrow">↓</div>
+            <div class="node">API Response: Answer + Claim Report / Evidence Pack</div>
+            <div class="arrow">↓</div>
+            <div class="node">Frontend Displays Result to User</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="card">
+            <div class="kicker">Project 03</div>
+            <h3>Production ML Predictive Analytics Platform — Azure MLOps + ERP Integration</h3>
+            <p>
+              A production machine learning platform for operational forecasting, risk prediction and financial anomaly detection,
+              deployed as containerized inference services on Azure and integrated directly with ERP workflows.
+            </p>
+            <ul>
+              <li><strong>Asset maintenance prediction:</strong> XGBoost Classifier predicting equipment failure risk from usage, maintenance history and operational signals.</li>
+              <li><strong>Inventory demand prediction:</strong> XGBoost Regressor forecasting future material consumption to reduce shortages and excess stock.</li>
+              <li><strong>Project overrun prediction:</strong> XGBoost Classifier identifying projects at risk of cost or schedule overruns.</li>
+              <li><strong>Duplicate payment detection:</strong> Hybrid XGBoost + Isolation Forest pipeline to identify suspicious or repeated finance transactions.</li>
+              <li><strong>Repeated expense anomaly detection:</strong> Isolation Forest model flagging abnormal recurring-expense patterns.</li>
+              <li><strong>Containerized deployment:</strong> Packaged trained models and inference services into Docker containers and hosted them on Azure.</li>
+              <li><strong>FastAPI inference layer:</strong> Exposed prediction endpoints through FastAPI, allowing ERP modules to request model inference in real time.</li>
+              <li><strong>ERP integration:</strong> Connected prediction APIs with ERP dashboards and operational workflows so model outputs were available where business users already worked.</li>
+              <li><strong>MLOps workflow:</strong> Used versioned model deployment, containerized releases and controlled inference services to support maintainable production ML delivery.</li>
+            </ul>
+            <div>
+              <span class="tag">XGBoost</span><span class="tag">Isolation Forest</span><span class="tag">Scikit-learn</span>
+              <span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">Azure</span>
+              <span class="tag">MLOps</span><span class="tag">REST API</span><span class="tag">ERP Integration</span>
+              <span class="tag">ROC-AUC</span><span class="tag">F1</span><span class="tag">MAPE</span>
+            </div>
+            <div class="impact"><strong>Business objective:</strong> move ML from offline experimentation into ERP-integrated production services that deliver predictions directly into operational decision-making.</div>
+          </div>
+          <div class="card arch">
+            <div class="kicker" style="text-align:center">Production ML Architecture</div>
+            <div class="node">ERP Operational Data<br><span class="small">Finance • Inventory • Assets • Projects</span></div>
+            <div class="arrow">↓</div>
+            <div class="node">Data Preparation • Feature Engineering</div>
+            <div class="arrow">↓</div>
+            <div class="split">
+              <div class="node">XGBoost Models</div>
+              <div class="node">Isolation Forest Models</div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="node">Model Evaluation & Versioning<br><span class="small">Recall • Precision • F1 • ROC-AUC • RMSE • MAE • MAPE</span></div>
+            <div class="arrow">↓</div>
+            <div class="node">Dockerized FastAPI Inference Service</div>
+            <div class="arrow">↓</div>
+            <div class="node">Azure Container Hosting / MLOps Deployment</div>
+            <div class="arrow">↓</div>
+            <div class="node">REST Inference APIs</div>
+            <div class="arrow">↓</div>
+            <div class="node">ERP Modules & Dashboards</div>
+            <div class="arrow">↓</div>
+            <div class="node">Predictions • Risk Flags • Anomaly Alerts</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="card">
+            <div class="kicker">Project 04</div>
+            <h3>Agentic ERP Action Layer — MCP-Governed Enterprise Operations</h3>
+            <p>
+              An enterprise agent-execution layer that allows AI assistants to securely interact with ERP business operations
+              through MCP-governed tools and existing ERP APIs, without exposing the underlying database directly to the model.
+            </p>
+            <ul>
+              <li><strong>MCP tool layer:</strong> Exposed approved ERP functions as business-level tools that AI agents can discover and invoke through MCP.</li>
+              <li><strong>Read + action workflows:</strong> Supported both data retrieval and controlled transactional operations instead of limiting the assistant to read-only queries.</li>
+              <li><strong>Business-level abstraction:</strong> Agents work with capabilities such as outstanding invoices, stock availability, unverified timesheets and sales-order creation rather than raw tables or SQL structures.</li>
+              <li><strong>Existing ERP API reuse:</strong> MCP sits above ERP APIs and business services, keeping existing validation and domain logic as the system of record.</li>
+              <li><strong>RBAC-aware execution:</strong> Users can only access the tools and data permitted by their existing ERP roles and permissions.</li>
+              <li><strong>Guardrails & validation:</strong> Requests pass through authorization checks, input validation and ERP business rules before actions are executed.</li>
+              <li><strong>Human-controlled high-impact actions:</strong> Designed sensitive transactional operations to support confirmation or approval before final execution where required.</li>
+              <li><strong>Auditability:</strong> Logged user requests, selected tools, execution results and transactional activity for traceability and governance.</li>
+              <li><strong>Extensible tool architecture:</strong> New ERP capabilities can be added as MCP tools without changing the agent's core interaction model.</li>
+            </ul>
+
+            <div style="margin-top:14px">
+              <div class="kicker" style="margin-bottom:8px">Example Agent Capabilities</div>
+              <div class="skills">
+                <span class="skill">Get Outstanding Invoices</span>
+                <span class="skill">Check Stock Availability</span>
+                <span class="skill">Get Unverified Timesheets</span>
+                <span class="skill">Create Sales Order</span>
+                <span class="skill">Retrieve Customer Balance</span>
+              </div>
+            </div>
+
+            <div style="margin-top:16px">
+              <span class="tag">MCP</span><span class="tag">Agentic AI</span><span class="tag">Tool Calling</span>
+              <span class="tag">.NET Core</span><span class="tag">ERP APIs</span><span class="tag">REST</span>
+              <span class="tag">RBAC</span><span class="tag">Guardrails</span><span class="tag">Audit Logging</span>
+              <span class="tag">SQL Server</span>
+            </div>
+
+            <div class="impact"><strong>Architecture principle:</strong> The AI agent interacts with governed business capabilities rather than unrestricted database access, preserving enterprise security, permissions, validations and business rules.</div>
+          </div>
+
+          <div class="card arch">
+            <div class="kicker" style="text-align:center">Agentic ERP Execution Architecture</div>
+            <div class="node">User / AI Chat Interface</div>
+            <div class="arrow">↓</div>
+            <div class="node">AI Agent / LLM</div>
+            <div class="arrow">↓</div>
+            <div class="node">Intent Understanding + Tool Selection</div>
+            <div class="arrow">↓</div>
+            <div class="node">MCP Server / Enterprise Tool Registry</div>
+            <div class="arrow">↓</div>
+            <div class="node">Authentication • RBAC • Guardrails</div>
+            <div class="arrow">↓</div>
+            <div class="node">ERP APIs / Business Services</div>
+            <div class="arrow">↓</div>
+            <div class="node">Business Rules • Validation • Approval / Confirmation</div>
+            <div class="arrow">↓</div>
+            <div class="node">ERP Database / SQL Server</div>
+            <div class="arrow">↓</div>
+            <div class="node">ERP Result / Transaction Status</div>
+            <div class="arrow">↓</div>
+            <div class="node">MCP → Agent → Natural Language Response / Confirmation</div>
+            <div class="arrow">↓</div>
+            <div class="node">Audit Log: User • Tool • Parameters • Result • Action</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="enterprise">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Beyond AI</div>
+            <h2>Enterprise Platforms</h2>
+          </div>
+          <p>AI work backed by real experience building full business systems across construction, finance, retail, F&amp;B and property domains.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="kicker">Carlisle ERP</div>
+            <h3>Construction ERP</h3>
+            <p>Cloud-based platform spanning estimation, planning, progress, timesheets, inspections, subcontracting, CVR, finance, procurement, HR and reporting.</p>
+            <div style="margin-top:14px"><span class="tag">.NET Core</span><span class="tag">Blazor</span><span class="tag">SQL Server</span><span class="tag">Azure</span></div>
+          </div>
+          <div class="card">
+            <div class="kicker">Armada ERP</div>
+            <h3>Multi-Industry Enterprise ERP</h3>
+            <p>Accounting, procurement, inventory, POS, HR/payroll, leasing, hotel PMS, facility management, CRM and reporting across multiple business sectors.</p>
+            <div style="margin-top:14px"><span class="tag">React</span><span class="tag">.NET</span><span class="tag">SQL Server</span><span class="tag">AWS</span></div>
+          </div>
+          <div class="card">
+            <div class="kicker">Countroo</div>
+            <h3>Multitenant SaaS ERP</h3>
+            <p>Cloud accounting and inventory SaaS supporting multiple businesses, locations, finance workflows, project costing and dashboards.</p>
+            <div style="margin-top:14px"><span class="tag">Blazor</span><span class="tag">Web API</span><span class="tag">Azure Blob</span><span class="tag">SaaS</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Career</div>
+            <h2>Experience</h2>
+          </div>
+          <p>Progression from hands-on software engineering to enterprise architecture and AI solution leadership.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="card role">
+            <div class="period">Jan 2024 — Present</div>
+            <div>
+              <h3>Solution Architect</h3>
+              <div class="company">Carlisle Group — Dubai, UAE</div>
+              <p>Own end-to-end solution architecture for construction ERP and AI components, technical roadmap, cloud architecture, integration design, AI orchestration and engineering governance.</p>
+            </div>
+          </div>
+          <div class="card role">
+            <div class="period">Dec 2017 — Dec 2023</div>
+            <div>
+              <h3>Lead Software Engineer</h3>
+              <div class="company">Armada Infotech DMCC — Dubai, UAE</div>
+              <p>Technical owner of a multi-industry ERP, leading core modules, performance optimization, integrations and enterprise delivery.</p>
+            </div>
+          </div>
+          <div class="card role">
+            <div class="period">2014 — 2017</div>
+            <div>
+              <h3>Software Engineer / Programmer</h3>
+              <div class="company">Dubai & Pakistan</div>
+              <p>Developed business applications, POS modules, reporting systems, databases, automation tools and operational software across multiple organizations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Technology</div>
+            <h2>Core Stack</h2>
+          </div>
+          <p>Technologies used across AI, backend, frontend, data, cloud and MLOps delivery.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>AI / ML / Agentic</h3>
+            <div class="skills">
+              <span class="skill">Python</span><span class="skill">LangChain</span><span class="skill">LangGraph</span>
+              <span class="skill">ReAct</span><span class="skill">CrewAI</span><span class="skill">RAG</span>
+              <span class="skill">OpenAI GPT</span><span class="skill">BERT</span><span class="skill">RoBERTa</span>
+              <span class="skill">TrOCR</span><span class="skill">Donut</span><span class="skill">docTR</span>
+              <span class="skill">ONNX Runtime</span><span class="skill">XGBoost</span><span class="skill">Isolation Forest</span>
+              <span class="skill">Hugging Face</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Vector / Data</h3>
+            <div class="skills">
+              <span class="skill">Milvus</span><span class="skill">ChromaDB</span><span class="skill">FAISS</span>
+              <span class="skill">Pinecone</span><span class="skill">SQL Server</span><span class="skill">PostgreSQL</span>
+              <span class="skill">MongoDB</span><span class="skill">Cosmos DB</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Software Engineering</h3>
+            <div class="skills">
+              <span class="skill">C#</span><span class="skill">.NET Core</span><span class="skill">ASP.NET Core</span>
+              <span class="skill">FastAPI</span><span class="skill">React</span><span class="skill">Next.js</span>
+              <span class="skill">Blazor</span><span class="skill">TypeScript</span><span class="skill">SignalR</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Cloud / DevOps / MLOps</h3>
+            <div class="skills">
+              <span class="skill">Azure Container Apps</span><span class="skill">Azure App Service</span>
+              <span class="skill">Azure Blob Storage</span><span class="skill">AWS EC2</span><span class="skill">AWS S3</span>
+              <span class="skill">Docker</span><span class="skill">Kubernetes</span><span class="skill">GitHub Actions</span>
+              <span class="skill">Azure DevOps</span><span class="skill">CI/CD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="card">
+          <div class="kicker">Business Impact</div>
+          <h2 style="margin:8px 0 18px">Engineering measured by outcomes.</h2>
+          <div class="grid-3">
+            <div class="metric"><strong>80–100 hrs</strong><span>Monthly finance / procurement workload reduced</span></div>
+            <div class="metric"><strong>15–20%</strong><span>Budget overrun reduction from forecasting & tracking</span></div>
+            <div class="metric"><strong>80%</strong><span>Reduction in manual errors through automation</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Contact</div>
+          <h2>Let’s build enterprise AI that ships.</h2>
+        </div>
+        <div class="contact">
+          <a class="btn btn-secondary" href="mailto:asad.ch.dxb@gmail.com">asad.ch.dxb@gmail.com</a>
+          <a class="btn btn-secondary" href="tel:+971565885227">+971 56 588 5227</a>
+          <a class="btn btn-secondary" href="https://linkedin.com/in/asad-chaudhary-59a3ba11b" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="small">© 2026 Asad Ullah Javed • Senior AI Engineer • Solution Architect • Dubai, UAE</div>
+    </div>
+  </footer>
+</body>
+</html>
